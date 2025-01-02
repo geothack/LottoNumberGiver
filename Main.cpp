@@ -47,8 +47,8 @@ int main()
     std::ofstream givenNumbers;
     std::ofstream archiveNumbers;
 
-    givenNumbers.open("Given/Given");
-    archiveNumbers.open("Archive/Archive",std::ios::app);
+    givenNumbers.open("Given.txt");
+    archiveNumbers.open("Archive.txt",std::ios::app);
     
     for (auto n = 0; n < listOfNumbers.size(); n++)
     {
@@ -58,7 +58,7 @@ int main()
             numbers += std::to_string(random) + " ";
         }
         listOfNumbers[n] = numbers;
-        if (!IsStringInFile("Archive/Archive", numbers))
+        if (!IsStringInFile("Archive.txt", numbers))
         {
             givenNumbers << listOfNumbers[n] << std::endl;
             archiveNumbers << listOfNumbers[n] << std::endl;

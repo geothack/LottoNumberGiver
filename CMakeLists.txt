@@ -8,20 +8,3 @@ project(LottoNumberGiver)
 
 add_executable(LottoNumberGiver Main.cpp)
 
-add_custom_command(
-    TARGET LottoNumberGiver  # Replace with your target name
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${PROJECT_SOURCE_DIR}/Src/Archive  # Source Folder
-        ${PROJECT_BINARY_DIR}/Debug  # Destination directory
-    COMMENT "Copying Folder to the build directory"
-)
-
-add_custom_command(
-    TARGET LottoNumberGiver  # Replace with your target name
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${PROJECT_SOURCE_DIR}/Src/Given  # Source Folder
-        ${PROJECT_BINARY_DIR}/Debug  # Destination directory
-    COMMENT "Copying Folder to the build directory"
-)
